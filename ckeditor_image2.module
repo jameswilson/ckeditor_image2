@@ -1,0 +1,97 @@
+<?php
+
+/**
+ * @file ckeditor_image2.module
+ *
+ * Includes tweaks to ckeditor that can't be performed through config.
+ */
+
+/***********************************************************************
+ *
+ * FOR CKEDITOR MODULE
+ *
+ ***********************************************************************/
+
+/**
+ * Implements hook_ckeditor_plugin()
+ */
+function ckeditor_image2_ckeditor_plugin() {
+  return array(
+    'image2' => array(
+      'name' => 'image2',
+      'desc' => t('An enhanced version of the Image plugin that introduces the image widget.'),
+    ),
+    'dialogui' => array(
+      'name' => 'dialogui',
+      'desc' => t('Various dialog field types used by the dialog plugin.'),
+    ),
+    'lineutils' => array(
+      'name' => 'lineutils',
+      'desc' => t('A set of utilities to find and create horizontal spaces in edited contents.'),
+    ),
+    'widget' => array(
+      'name' => 'widget',
+      'desc' => t('The Widget API lets you standardize, manage and control the layout and style of specific sections of your WYSIWYG area by grouping various elements together to easily move widgets around the surrounding content.'),
+    ),
+  );
+}
+
+/***********************************************************************
+ *
+ * FOR WYSIWYG MODULE
+ *
+ ***********************************************************************/
+
+/**
+ * Implements hook_wysiwyg_plugin().
+ */
+function ckeditor_image2_wysiwyg_plugin($editor, $version) {
+  if ($editor == 'ckeditor' && version_compare($version, '4.4.6', '>=')) {
+    return array(
+      'image2' => array(
+        'url' => 'http://ckeditor.com/addon/image2',
+        'buttons' => array(
+          'image2' => t('Image2'),
+        ),
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'dialogui' => array(
+        'url' => 'http://ckeditor.com/addon/dialogui',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'lineutils' => array(
+        'url' => 'http://ckeditor.com/addon/lineutils',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+      'widget' => array(
+        'url' => 'http://ckeditor.com/addon/widget',
+        'load' => TRUE,
+        'internal' => TRUE,
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter()
+ */
+function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
+
+  // Specify the custom config file that adds our custom plugins.
+  if ($context['profile']->editor == 'ckeditor') {
+
+    $settings['customConfig'] = base_path() . drupal_get_path('module', 'ckeditor_image2') .
+                                '/ckeditor_image2_config.js';
+
+    if (isset($settings['extraPlugins'])) {
+      $settings['extraPlugins'] .= ',image2';
+    } else {
+      $settings['extraPlugins'] = 'image2';
+    }
+    $settings['removePlugins'] = 'image';
+  }
+  //dpm($settings);
+}

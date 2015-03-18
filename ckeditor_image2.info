@@ -1,0 +1,3 @@
+name = CKEditor Image2 Plugin
+description = An enhanced image plugin for CKEditor to support captions, CSS class-based alignment and centering.
+core = 7.x
