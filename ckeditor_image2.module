@@ -86,12 +86,18 @@ function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
     $settings['customConfig'] = base_path() . drupal_get_path('module', 'ckeditor_image2') .
                                 '/ckeditor_image2_config.js';
 
+    // Replace image plugin with image2.
     if (isset($settings['extraPlugins'])) {
       $settings['extraPlugins'] .= ',image2';
-    } else {
+    }
+    else {
       $settings['extraPlugins'] = 'image2';
     }
-    $settings['removePlugins'] = 'image';
+    if (isset($settings['removePlugins'])) {
+      $settings['removePlugins'] .= 'image';
+    }
+    else {
+      $settings['removePlugins'] .= 'image';
+    }
   }
-  //dpm($settings);
 }
