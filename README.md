@@ -2,7 +2,7 @@ Image2 is an enhanced image plugin for CKEditor that supports image captions,
 CSS class-based alignment and centering.
 
 This module effectively replaces the default Image plugin that comes with
-CKeditor with the Enhanced Image plugin.
+CKEditor with the Enhanced Image plugin.
 
 Requirements
 ------------
@@ -17,21 +17,22 @@ Installation
 
 1.  Ensure the Wysiwyg API or the CKEditor module is installed and configured.
 
-2.  Ensure Ckeditor Standard or Full package is downloaded from ckeditor.com
+2.  Ensure CKEditor Standard or Full package is downloaded from ckeditor.com
     and installed to the `sites/all/libraries` folder.
 
 3.  Download and install this module.
 
 4.  Download the Image2 plugin and its dependencies from the links below; be
-    sure to download versions that are compatible with your version of CKeditor.
+    sure to download versions that are compatible with your version of CKEditor.
 
     * [Image2](http://ckeditor.com/addons/image2)
     * [Widget](http://ckeditor.com/addons/widget)
     * [Line Utilities](http://ckeditor.com/addons/lineutils)
     * [Dialog UI](http://ckeditor.com/addons/dialogui)
 
-    Note that the Dialog module and Clipboard plugins are also required but
-    already come packaged with the Standard CKeditor build.
+    Note that the Dialog and Clipboard plugins are also listed as dependencies
+    on the Image2 plugin page, but they already come packaged with the Standard
+    CKEditor build.
 
     The downloaded zip files should be unzipped into the
     `sites/all/libraries/ckeditor/plugins` folder.
@@ -41,13 +42,19 @@ Installation
 
         $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make --no-core
 
-5.  Enable the CKeditor Image2 module.
+5.  Enable the CKEditor Image2 module and ensure your Text formats and Wysiwyg
+    profiles are configured appropriately. Enable the Image or Image2 plugin
+    in the Wysiwyg profile settings. If Image plugin is enabled, Image2 will
+    be substituted automatically.
 
-6.  Add an image inside an editor (eg using the Media module button integration).
+6.  Add an image inside an editor (e.g. using the Media module button
+    integration).
 
-7.  Save the node.
+7.  Double click the image to see the Image2 Properties dialog popup, and
+    select alignment options or enable the caption.
 
-8.  Edit the node, double click the image to see the Image2 Properties dialog popup.
+8.  Theme alignment classes, `figure` and `figcaption` elements to taste
+    with CSS.
 
 
 Known Limitations
