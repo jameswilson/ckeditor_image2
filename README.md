@@ -9,14 +9,6 @@ site's libraries folder. CKEditor version 4.4 or higher is recommended. This
 module should work with both the ckeditor module OR the Wysiwyg API module,
 but currently has only been tested against the WYSIWYG API module.
 
-Known Limitations
------------------
-
-The Media module is partially compatible with Image2 -- once you insert an
-image with the Media module right-clicking or double clicking the image does
-nothing: the form must be submitted and edited again before you can access
-the Image2 popup; the Media module popup is no longer accesible.
-
 Installation
 ------------
 
@@ -53,3 +45,22 @@ Installation
 7.  Save the node.
 
 8.  Edit the node, double click the image to see the Image2 Properties dialog popup.
+
+
+Known Limitations
+-----------------
+
+The Media module is partially compatible with Image2 -- once you insert an
+image with the Media module right-clicking or double clicking the image does
+nothing: the form must be submitted and edited again before you can access
+the Image2 popup; the Media module popup is no longer accesible.
+
+We've had success with the following patches to Media module version 7.x-1.4
+or greater:
+
+* [Issue #2433083](https://www.drupal.org/node/2433083)
+    Media - Wysiwyg token not converted if media-image is not first class.
+    [patch file](https://www.drupal.org/files/issues/media-wysiwyg-ckeditor-image2-2433083-3.patch)
+* [Issue #2428005](https://www.drupal.org/node/2428005)
+    Media - Wysiwyg data no properly converted because of a js error.
+    [patch file](https://www.drupal.org/files/issues/media_fix.patch)
