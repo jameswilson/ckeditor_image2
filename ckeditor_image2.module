@@ -94,7 +94,7 @@ function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
       $settings['extraPlugins'] = 'image2';
     }
     if (isset($settings['removePlugins'])) {
-      $settings['removePlugins'] .= 'image';
+      $settings['removePlugins'] .= ',image';
     }
     else {
       $settings['removePlugins'] .= 'image';

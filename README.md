@@ -1,13 +1,16 @@
 Image2 is an enhanced image plugin for CKEditor that supports image captions,
 CSS class-based alignment and centering.
 
+This module effectively replaces the default Image plugin that comes with
+CKeditor with the Enhanced Image plugin.
+
 Requirements
 ------------
 
 This module requires CKEditor Standard or Full version to be installed in your
 site's libraries folder. CKEditor version 4.4 or higher is recommended. This
-module should work with both the ckeditor module OR the Wysiwyg API module,
-but currently has only been tested against the WYSIWYG API module.
+module should work with both the CKEditor module OR the Wysiwyg API module,
+but currently has only been tested against the Wysiwyg API module.
 
 Installation
 ------------
@@ -17,7 +20,7 @@ Installation
 2.  Ensure Ckeditor Standard or Full package is downloaded from ckeditor.com
     and installed to the `sites/all/libraries` folder.
 
-3.  Download and install this module
+3.  Download and install this module.
 
 4.  Download the Image2 plugin and its dependencies from the links below; be
     sure to download versions that are compatible with your version of CKeditor.
