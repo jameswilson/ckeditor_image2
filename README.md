@@ -56,6 +56,13 @@ Installation
 8.  Theme alignment classes, `figure` and `figcaption` elements to taste
     with CSS.
 
+Please Note:
+
+The approach taken by this module adds classes such as align-left, align-right,
+or align-center to the image or figure tag, which does not actually result in
+the image positioning left/right center. These classes need to be added to the
+theme.
+
 
 Known Limitations
 -----------------
