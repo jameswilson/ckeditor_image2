@@ -83,8 +83,7 @@ function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
   // Specify the custom config file that adds our custom plugins.
   if ($context['profile']->editor == 'ckeditor') {
 
-    $settings['customConfig'] = base_path() . drupal_get_path('module', 'ckeditor_image2') .
-                                '/ckeditor_image2_config.js';
+    $settings['customConfig'] = base_path() . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2_config.js';
 
     // Replace image plugin with image2.
     if (isset($settings['extraPlugins'])) {
@@ -97,7 +96,7 @@ function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
       $settings['removePlugins'] .= ',image';
     }
     else {
-      $settings['removePlugins'] .= 'image';
+      $settings['removePlugins'] = 'image';
     }
   }
 }
