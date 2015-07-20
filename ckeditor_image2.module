@@ -19,21 +19,25 @@ function ckeditor_image2_ckeditor_plugin() {
   return array(
     'image2' => array(
       'name' => 'image2',
-      'desc' => t('An enhanced version of the Image plugin that introduces the image widget.'),
-    ),
-    'dialogui' => array(
-      'name' => 'dialogui',
-      'desc' => t('Various dialog field types used by the dialog plugin.'),
-    ),
-    'lineutils' => array(
-      'name' => 'lineutils',
-      'desc' => t('A set of utilities to find and create horizontal spaces in edited contents.'),
-    ),
-    'widget' => array(
-      'name' => 'widget',
-      'desc' => t('The Widget API lets you standardize, manage and control the layout and style of specific sections of your WYSIWYG area by grouping various elements together to easily move widgets around the surrounding content.'),
+      'path' => libraries_get_path('ckeditor') . '/plugins/image2/',
+      'desc' => t('Plugin for the Enhanced Image2 CKEditor widget.'),
+      'buttons' => array(
+        'button_name' => array(
+          'icon' => 'icons/image.png',
+          'label' => 'Image',
+        ),
+      ),
     ),
   );
+}
+
+/**
+ * Implements hook_ckeditor_settings_alter().
+ */
+function ckeditor_image2_ckeditor_settings_alter(&$settings, $conf) {
+  // Add Image2 default configs to CKEditor to disable width/height in
+  // inline style tags and to define the default alignment class names.
+  $settings['customConfig'] = drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2_config.js';
 }
 
 /***********************************************************************
