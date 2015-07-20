@@ -3,10 +3,14 @@
  */
 CKEDITOR.editorConfig = function(config) {
 
-  // Do not allow inline css for width and height, because this
-  // breaks responsive.
+  // By default, CKEditor will try to define the image width and
+  // height in the image tag using inline style attribute, however
+  // this breaks responsive image resizing. Thus, prevent width/height
+  // css rules on the image tag's inline style attribute.
   config.disallowedContent = 'img{width,height}';
-  // Instead use image2 alignment classes which are used to adjust width and
-  // height, and depend on Media module presets to define image size.
+  // Instead use image2 alignment classes which can be used in your
+  // theme to adjust width and height using percentages while allowing
+  // width and height *attributes* (eg those created by core Drupal
+  // image presets and the Media module) to define image size.
   config.image2_alignClasses = [ 'align-left', 'align-center', 'align-right' ];
 };
