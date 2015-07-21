@@ -37,10 +37,11 @@ Installation
     The downloaded zip files should be unzipped into the
     `sites/all/libraries/ckeditor/plugins` folder.
 
-    Optionally, you can run the make file from your drupal root to automatically
+    An example Drush make file has been provided with this module to facilitate
+    this step, which may be executed from your Drupal site root to automatically
     download the plugins to the correct location:
 
-        $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make --no-core
+        $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make.example --no-core
 
 5.  Enable the CKEditor Image2 module. Ensure your Text formats allow the <img>,
     <div>, <figure>, and <figcaption> tags.  Then ensure the Image2 plugin is
