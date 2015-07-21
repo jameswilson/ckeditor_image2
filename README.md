@@ -1,8 +1,7 @@
-Image2 is an enhanced image plugin for CKEditor that supports image captions,
-CSS class-based alignment and centering.
-
-This module effectively replaces the default Image plugin that comes with
-CKEditor with the Enhanced Image plugin.
+This module helps you replace the default Image plugin that comes with
+CKEditor with the new Enhanced Image plugin, which has support for image
+captions, CSS class-based alignment, centering, and responsive resizing. It
+integrates with both the CKEditor and WYSIWYG API Drupal modules.
 
 Requirements
 ------------
@@ -53,7 +52,7 @@ Installation
       the "Editor Appearance" section of the CKEditor profile config screen.
 
 6.  Create a node and add an image inside an editor using the Image icon/button
-    in the CKeditor toolbar.
+    in the CKEditor toolbar.
 
 7.  Double-click the image to popup the Image2 Properties dialog and select
     alignment options or enable the caption text option.
