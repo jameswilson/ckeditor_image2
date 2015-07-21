@@ -15,10 +15,10 @@ but currently has only been tested against the Wysiwyg API module.
 Installation
 ------------
 
-1.  Ensure the Wysiwyg API or the CKEditor module is installed and configured.
+1.  Enable and configure the Wysiwyg API or the CKEditor module.
 
-2.  Ensure CKEditor Standard or Full package is downloaded from ckeditor.com
-    and installed to the `sites/all/libraries` folder.
+2.  Download the CKEditor Standard or Full package from ckeditor.com and
+    and placed in the `sites/all/libraries` folder.
 
 3.  Download and install this module.
 
