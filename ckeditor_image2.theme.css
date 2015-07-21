@@ -81,12 +81,3 @@ figure > br {
   margin-bottom: 0;
 }
 
-/**
- * Because image widgets can float left or right
- * we must override the default widget wrapper
- * layout to allow for text to flow around content
- * in the ckeditor.
- */
-.cke_widget_wrapper {
-  display: inline !important;
-}
