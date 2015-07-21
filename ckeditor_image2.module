@@ -6,6 +6,21 @@
  * Includes tweaks to ckeditor that can't be performed through config.
  */
 
+/**
+ * Implements hook_init().
+ */
+function ckeditor_image2_init() {
+  // There is no straightforward way to detect when to add the required styles
+  // for proper display of Image2 enhanced images on the frontend, thus the
+  // stylesheets are added to *all* pages in the site out of the box.
+  //
+  // Note: The responsive styles are split apart from the rest of the layout
+  // styles so that they may be easily disabled or overridden in the theme
+  // to fit custom image size requirements and breakpoints.
+  drupal_add_css(drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.theme.css');
+  drupal_add_css(drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.responsive.css');
+}
+
 /***********************************************************************
  *
  * FOR CKEDITOR MODULE
@@ -16,11 +31,15 @@
  * Implements hook_ckeditor_plugin()
  */
 function ckeditor_image2_ckeditor_plugin() {
+
+  // The Image2 plugin definition format required for the CKEditor module
+  // will provide an extra checkbox under the "Editor Appearance" section of
+  // the CKEditor profile configuration screen in the Drupal admin UI.
   return array(
     'image2' => array(
       'name' => 'image2',
       'path' => libraries_get_path('ckeditor') . '/plugins/image2/',
-      'desc' => t('Plugin for the Enhanced Image2 CKEditor widget.'),
+      'desc' => t('Plugin for the Enhanced Image2 widget for CKEditor.'),
       'buttons' => array(
         'button_name' => array(
           'icon' => 'icons/image.png',
@@ -35,9 +54,19 @@ function ckeditor_image2_ckeditor_plugin() {
  * Implements hook_ckeditor_settings_alter().
  */
 function ckeditor_image2_ckeditor_settings_alter(&$settings, $conf) {
-  // Add Image2 default configs to CKEditor to disable width/height in
-  // inline style tags and to define the default alignment class names.
-  $settings['customConfig'] = drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2_config.js';
+  // Add custom configuration files for Enhanced Image2 widget, which defines
+  // the default alignment classes (align-left, align-right, align-center) and
+  // prevents width and height rules in inline style attributes on image tags.
+  //
+  // Note: the customConfig path value is *relative* to the location of the
+  // CKEditor library, which is usually in sites/all/libraries/ckeditor, thus
+  // sets of "../" are added to the path to return to the base_path.
+  $return_to_base = str_repeat('../', count(explode('/', libraries_get_path('ckeditor'))));
+  $settings['customConfig'] = $return_to_base . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2_config.js?' . variable_get('css_js_query_string', '0');
+
+  // Add Enhanced Image2 stylesheets for alignment and caption configurations.
+  $settings['contentsCss'][] = base_path() . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.theme.css?' . variable_get('css_js_query_string', '0');
+  $settings['contentsCss'][] = base_path() . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.responsive.css?' . variable_get('css_js_query_string', '0');
 }
 
 /***********************************************************************
