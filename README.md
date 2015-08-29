@@ -46,8 +46,8 @@ Installation
     <div>, <figure>, and <figcaption> tags.  Then ensure the Image2 plugin is
     enabled in one of the following ways, depending on which module is in use:
 
-    * Wysiwyg module: Enable the Image plugin in the Wysiwyg profile settings
-      and the Enhanced Image2 plugin will be used automatically.
+    * Wysiwyg API module: Enable the Image plugin in the Wysiwyg profile
+      settings and the Enhanced Image2 plugin will be used automatically.
     * CKEditor module: Enable the Enhanced Image2 widget plugin (checkbox) under
       the "Editor Appearance" section of the CKEditor profile config screen.
 
@@ -57,9 +57,9 @@ Installation
 7.  Double-click the image to popup the Image2 Properties dialog and select
     alignment options or enable the caption text option.
 
-8.  Example responsive layouts are provided in ckeditor_images2.responsive.css
-    files, which may be overridden or disabled in your theme according
-    to your image size requirements and breakpoints.
+8.  Example responsive layouts are provided by ckeditor_images2.responsive.css
+    which may be overridden or disabled in your theme according to your image
+    size requirements and breakpoints.
 
 
 Known Limitations
@@ -72,8 +72,7 @@ Known Limitations
     does nothing: the form must be submitted and edited again before you can
     access the Image2 popup; the Media module popup is no longer accesible.
 
-    We've had success with the following patches to Media module version 7.x-1.4
-    or greater:
+    We've had success with the following patches to version 7.x-1.4 or greater:
 
     * [Issue #2433083](https://www.drupal.org/node/2433083)
         Media - Wysiwyg token not converted if media-image is not first class.
@@ -85,10 +84,11 @@ Known Limitations
 2.  Filtered HTML text format
 
     The Filtered HTML text format provided by Drupal 7's standard installation
-    profile is configured to "Convert line breaks into HTML" by default. This
-    interferes with the Enhanced Image2 plugin's HTML template that adds line
-    breaks around the <figcaption> tag resulting in extra whitespace above and
-    below the caption text because the linebreaks are converted to <br> tags:
+    profile comes pre-configured with an option enabled to "Convert line breaks
+    into HTML". This interferes with the Enhanced Image2 plugin's HTML template
+    that adds line breaks around the `<figcaption>` tag resulting in extra
+    whitespace above and below the caption text because the linebreaks
+    are converted to <br> tags:
 
         <figure>
           <img>
