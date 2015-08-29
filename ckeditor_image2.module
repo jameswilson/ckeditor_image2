@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file ckeditor_image2.module
+ * @file
  * Includes tweaks to CKEditor that can't be performed through UI config.
  */
 

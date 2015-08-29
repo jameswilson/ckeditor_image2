@@ -1,4 +1,5 @@
 /**
+ * @file
  * Custom CKEditor configurations.
  *
  * @param {CKEditor.config} config The existing CKEditor configuration object.
