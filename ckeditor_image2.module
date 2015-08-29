@@ -132,5 +132,9 @@ function ckeditor_image2_wysiwyg_editor_settings_alter(&$settings, $context) {
     else {
       $settings['removePlugins'] = 'image';
     }
+
+    // Add stylesheets for proper alignment and caption styles inside an editor.
+    $settings['contentsCss'][] = base_path() . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.theme.css?' . variable_get('css_js_query_string', '0');
+    $settings['contentsCss'][] = base_path() . drupal_get_path('module', 'ckeditor_image2') . '/ckeditor_image2.responsive.css?' . variable_get('css_js_query_string', '0');
   }
 }
