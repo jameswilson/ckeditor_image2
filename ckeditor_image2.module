@@ -7,9 +7,9 @@
  */
 
 /**
- * Implements hook_init().
+ * Implements hook_page_build().
  */
-function ckeditor_image2_init() {
+function ckeditor_image2_page_build(&$page) {
   // There is no straightforward way to detect when to add the required styles
   // for proper display of Image2 enhanced images on the frontend, thus the
   // stylesheets are added to *all* pages in the site out of the box.
