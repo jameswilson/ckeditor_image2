@@ -24,10 +24,10 @@ Installation
 4.  Download the Image2 plugin and its dependencies from the links below; be
     sure to download versions that are compatible with your version of CKEditor.
 
-    * [Image2](http://ckeditor.com/addon/image2)
+    * [Enhanced Image](http://ckeditor.com/addon/image2)
     * [Widget](http://ckeditor.com/addon/widget)
     * [Line Utilities](http://ckeditor.com/addon/lineutils)
-    * [Dialog UI](http://ckeditor.com/addon/dialogui)
+    * [Dialog User Interface](http://ckeditor.com/addon/dialogui)
 
     Note that the Dialog and Clipboard plugins are also listed as dependencies
     on the Image2 plugin page, but they already come packaged with the Standard
