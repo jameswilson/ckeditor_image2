@@ -39,7 +39,7 @@ function ckeditor_image2_ckeditor_plugin() {
     'image2' => array(
       'name' => 'image2',
       'path' => libraries_get_path('ckeditor') . '/plugins/image2/',
-      'desc' => t('Plugin for the Enhanced Image2 widget for CKEditor.'),
+      'desc' => t('Plugin for the Enhanced Image widget for CKEditor. See <a href="@url">addon page</a> for more details.', array('@url' => 'http://ckeditor.com/addon/image2')),
       'buttons' => array(
         'button_name' => array(
           'icon' => 'icons/image.png',
