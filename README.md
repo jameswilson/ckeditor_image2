@@ -1,15 +1,17 @@
+This module is an extension to the CKEditor module for Drupal. It also supports
+CKEditor installed through the Wysiwyg module.
+
 This module helps you replace the default Image plugin that comes with
 CKEditor with the new Enhanced Image plugin, which has support for image
-captions, CSS class-based alignment, centering, and responsive resizing. It
-integrates with both the CKEditor and WYSIWYG API Drupal modules.
+captions via HTML5 `<figure>` and `<figcaption>` tags, CSS class-based
+alignment, centering, and responsive resizing.
 
 Requirements
 ------------
 
 This module requires CKEditor Standard or Full version to be installed in your
-site's libraries folder. CKEditor version 4.4 or higher is recommended. This
-module should work with both the CKEditor module OR the Wysiwyg API module,
-but currently has only been tested against the Wysiwyg API module.
+site's libraries folder. CKEditor version 4.4 or higher is recommended. The
+module also depends on the Libraries API version 2.x.
 
 Installation
 ------------
