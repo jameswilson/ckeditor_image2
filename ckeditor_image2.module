@@ -20,7 +20,7 @@ function ckeditor_image2_page_build(&$page) {
     // The responsive styles are split apart from the rest of the layout
     // styles so that they may be easily disabled or overridden in the theme
     // to fit custom image size requirements and breakpoints.
-    $module_path . 'ckeditor_image2.responsive.css' => $attached_options
+    $module_path . 'ckeditor_image2.responsive.css' => $attached_options,
   );
 }
 

@@ -1,6 +1,11 @@
 /**
  * @file
+ *
  * Custom CKEditor configurations.
+ */
+
+/**
+ * Custom editor configs for CKEditor Enhanced Image plugin.
  *
  * @param {CKEditor.config} config The existing CKEditor configuration object.
  */
