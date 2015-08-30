@@ -16,50 +16,57 @@ module also depends on the Libraries API version 2.x.
 Installation
 ------------
 
-1.  Enable and configure the Wysiwyg API or the CKEditor module.
-
-2.  Download the CKEditor Standard or Full package from ckeditor.com and
+1.  Download the CKEditor Standard or Full package from CKEditor.com and
     place it in the `sites/all/libraries` folder.
 
-3.  Download and install this module.
+2.  Download and install this module. Ensure the Libraries API and either the
+    Wysiwyg API or the CKEditor module are also enabled and configured.
 
-4.  Download the Image2 plugin and its dependencies from the links below; be
-    sure to download versions that are compatible with your version of CKEditor.
+3.  Download the Enhanced Image (image2) plugin and its dependencies from the
+    links below; be sure to download versions that are compatible with your
+    version of CKEditor.
 
     * [Enhanced Image](http://ckeditor.com/addon/image2)
     * [Widget](http://ckeditor.com/addon/widget)
     * [Line Utilities](http://ckeditor.com/addon/lineutils)
     * [Dialog User Interface](http://ckeditor.com/addon/dialogui)
 
-    Note that the Dialog and Clipboard plugins are also listed as dependencies
-    on the Image2 plugin page, but they already come packaged with the Standard
-    CKEditor build.
-
-    The downloaded zip files should be unzipped into the
+    The downloaded plugin files should be unzipped inside the
     `sites/all/libraries/ckeditor/plugins` folder.
 
-    An example Drush make file has been provided with this module to facilitate
-    this step, which may be executed from your Drupal site root to automatically
-    download the plugins to the correct location:
+    Note 1: although the Dialog and Clipboard plugins are also listed as
+    dependencies on the Image2 plugin page, they already come packaged
+    with both the Standard and Full CKEditor builds.
+
+    Note 2: An example Drush make file has been provided with this module to
+    facilitate this download and installation step, which may be executed from
+    your Drupal site root to automatically download the plugins to the correct
+    location:
 
         $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make.example --no-core
 
-5.  Enable the CKEditor Image2 module. Ensure your Text formats allow the <img>,
-    <div>, <figure>, and <figcaption> tags.  Then ensure the Image2 plugin is
-    enabled in one of the following ways, depending on which module is in use:
+4.  Enable the CKEditor Image2 module. Ensure your Text formats allow the
+    following tags: `<img> <div> <figure> <figcaption>`. Then ensure the
+    Image2 plugin is enabled in one of the following ways, depending on the
+    module in use:
 
     * Wysiwyg API module: Enable the Image plugin in the Wysiwyg profile
       settings and the Enhanced Image2 plugin will be used automatically.
     * CKEditor module: Enable the Enhanced Image2 widget plugin (checkbox) under
       the "Editor Appearance" section of the CKEditor profile config screen.
 
-6.  Create a node and add an image inside an editor using the Image icon/button
+Usage
+-----
+
+1.  Create a node and add an image inside an editor using the Image icon/button
     in the CKEditor toolbar.
 
-7.  Double-click the image to popup the Image2 Properties dialog and select
-    alignment options or enable the caption text option.
+2.  Double-click the image to popup the Image2 Properties dialog and select
+    alignment options or enable the caption text option.  You may also select
+    the image and then use the text alignment buttons in the editor toolbar to
+    affect the alignment.
 
-8.  Example responsive layouts are provided by ckeditor_images2.responsive.css
+3.  Example responsive layouts are provided by ckeditor_images2.responsive.css
     which may be overridden or disabled in your theme according to your image
     size requirements and breakpoints.
 
