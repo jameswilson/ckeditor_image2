@@ -1,6 +1,5 @@
 /**
  * @file
- *
  * Custom CKEditor configurations.
  */
 
