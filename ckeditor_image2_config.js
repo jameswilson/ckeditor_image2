@@ -9,7 +9,7 @@
  * @param {CKEditor.config} config The existing CKEditor configuration object.
  */
 CKEDITOR.editorConfig = function (config) {
-  "use strict";
+  'use strict';
   // By default, CKEditor will try to define the image width and
   // height in the image tag using inline style attribute, however
   // this breaks responsive image resizing. Thus, prevent width/height
