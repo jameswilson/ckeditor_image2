@@ -70,6 +70,12 @@ Usage
     which may be overridden or disabled in your theme according to your image
     size requirements and breakpoints.
 
+Compatibility
+-------------
+
+The Enhanced Image module is known to work with the CKEditor module, with
+CKEditor installed using the WYSIWYG API module, with either the IMCE or
+Insert modules for inserting images into the editor.
 
 Known Limitations
 -----------------
