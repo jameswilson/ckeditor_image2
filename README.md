@@ -45,15 +45,66 @@ Installation
 
         $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make.example --no-core
 
-4.  Enable the CKEditor Image2 module. Ensure your Text formats allow the
-    following tags: `<img> <div> <figure> <figcaption>`. Then ensure the
-    Image2 plugin is enabled in one of the following ways, depending on the
-    module in use:
+4.  Enable the CKEditor Image2 module. Then, depending on the module in use,
+    ensure the Image2 plugin is enabled in your editor profile(s) in one of the
+    following ways:
 
     * Wysiwyg API module: Enable the Image plugin in the Wysiwyg profile
       settings and the Enhanced Image2 plugin will be used automatically.
+      See notes below about proper configuration of the WYSIWYG Filter.
     * CKEditor module: Enable the Enhanced Image2 widget plugin (checkbox) under
       the "Editor Appearance" section of the CKEditor profile config screen.
+
+5.  Configure your Text formats to allow img, div, figure and figcaption tags,
+    as well as the alignment classes (align-left, align-right, align-center).
+
+    *   If your Text formats have the *Limit allowed HTML tags* option
+        enabled, ensure the following tags are listed:
+
+            <img> <div> <figure> <figcaption>
+
+    *   If your Text formats have the *WYSIWYG filter* option enabled, in the
+        "HTML elements and attributes" section, ensure the img, div, figure
+        and figcaption elements allowed and that class attributes are allowed
+        on the img, div, and figure elements.  There are a number of ways to
+        write these rules using the TinyMCE valid_elements syntax. Any of these
+        settings should work depending on how flexible/restrictive you want the
+        rules to be:
+
+        *   One element per line, very restrictive:
+
+                img[class]
+                div[class]
+                figure[class]
+                figcaption
+
+        *   One element per line, less restrictive; class attribute possible
+            on any element:
+
+                @[class]
+                div
+                img
+                figure
+                figcaption
+
+        *   Very restrictive, condensed:
+
+                div,img,figure[class]
+                figcaption
+
+        *   Less restrictive, condensed:
+
+                @[class]
+                div,img,figure,figcaption
+
+        Finally, in the section on "Rules for Class Names", ensure the
+        alignment classes are whitelisted:
+
+            align-left,align-right,align-center
+
+        Or, the less restrictive:
+
+            align-*
 
 Usage
 -----
