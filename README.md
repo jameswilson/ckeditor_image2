@@ -59,17 +59,17 @@ Installation
     as well as the alignment classes (align-left, align-right, align-center).
 
     *   If your Text formats have the *Limit allowed HTML tags* option
-        enabled, ensure the following tags are listed:
+        enabled, ensure the following tags are allowed:
 
             <img> <div> <figure> <figcaption>
 
     *   If your Text formats have the *WYSIWYG filter* option enabled, in the
         "HTML elements and attributes" section, ensure the img, div, figure
-        and figcaption elements allowed and that class attributes are allowed
-        on the img, div, and figure elements.  There are a number of ways to
-        write these rules using the TinyMCE valid_elements syntax. Any of these
-        settings should work depending on how flexible/restrictive you want the
-        rules to be:
+        and figcaption elements are allowed and that class attributes are
+        allowed on the img, div, and figure elements.  There are a number of
+        ways to write these rules using the TinyMCE valid_elements syntax. Any
+        of these settings should work depending on how flexible/restrictive you
+        want the rules to be:
 
         *   One element per line, very restrictive:
 
