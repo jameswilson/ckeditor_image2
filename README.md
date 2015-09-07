@@ -49,9 +49,10 @@ Installation
     ensure the Image2 plugin is enabled in your editor profile(s) in one of the
     following ways:
 
-    * Wysiwyg API module: Enable the Image plugin in the Wysiwyg profile
-      settings and the Enhanced Image2 plugin will be used automatically.
-      See notes below about proper configuration of the WYSIWYG Filter.
+    * Wysiwyg API module: Enable both the Image and Image2 plugin (checkboxes)
+      in the Wysiwyg profile settings. The Enhanced Image2 plugin will be used
+      automatically to replace the original Image plugin. *See notes below
+      about proper configuration of the WYSIWYG Filter.*
     * CKEditor module: Enable the Enhanced Image2 widget plugin (checkbox) under
       the "Editor Appearance" section of the CKEditor profile config screen.
 
@@ -66,9 +67,9 @@ Installation
     *   If your Text formats have the *WYSIWYG filter* option enabled, in the
         "HTML elements and attributes" section, ensure the img, div, figure
         and figcaption elements are allowed and that class attributes are
-        allowed on the img, div, and figure elements.  There are a number of
-        ways to write these rules using the TinyMCE valid_elements syntax. Any
-        of these settings should work depending on how flexible/restrictive you
+        allowed on the img, div, and figure elements.  There are a number
+        of ways to write these rules using the valid_elements syntax. Any of
+        these settings should work depending on how flexible/restrictive you
         want the rules to be:
 
         *   One element per line, very restrictive:
