@@ -63,6 +63,13 @@ figure > br {
 .align-center {
   text-align: center;
 }
+/**
+ * Override block display of centered figure elements
+ * made by some overzealous Normalize.css scripts.
+ */
+.align-center figure {
+  display: inline-block;
+}
 /* Reset text alignment in center-aligned images with captions. */
 .align-center figcaption {
   text-align: left; /* LTR */
