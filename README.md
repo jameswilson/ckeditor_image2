@@ -140,7 +140,16 @@ Known Limitations
     access the Image2 popup; the Media module popup is no longer accessible.
 
     With CKEditor module and Media 7.x-2.x, consider helping work out the kinks
-    on the [Media CKEditor issue #2400455](https://www.drupal.org/node/2400455).
+    in the new Media CKEditor on the following issues:
+
+    * [Issue #2400455](https://www.drupal.org/node/2400455)
+        Media CKEditor - Not compatible with CKEditor Image2 (enhanced image)
+        plugin. No patch.
+
+    * [Issue #2513454](https://www.drupal.org/node/2513454)
+        Media CKEditor - Improving CKEditor integration
+        Requires CKEditor >=4.5 widget functionality. A patch is present on the
+        issue but is untested by this module's maintainer -- feedback welcome.
 
     With Media 7.x-1.x, the following patches may be necessary to get a
     baseline integration working, however the form must still be saved and
