@@ -41,7 +41,8 @@ Installation
     Note 2: An example Drush make file has been provided with this module to
     facilitate this download and installation step, which may be executed from
     your Drupal site root to automatically download the plugins to the correct
-    location:
+    location. Edit the make file before running it to ensure the plugin
+    versions match the CKEditor library version.
 
         $ drush make sites/all/modules/ckeditor_image2/ckeditor_image2.make.example --no-core
 
