@@ -145,7 +145,6 @@ Known Limitations
     * [Issue #2400455](https://www.drupal.org/node/2400455)
         Media CKEditor - Not compatible with CKEditor Image2 (enhanced image)
         plugin. No patch.
-
     * [Issue #2513454](https://www.drupal.org/node/2513454)
         Media CKEditor - Improving CKEditor integration
         Requires CKEditor >=4.5 widget functionality. A patch is present on the
